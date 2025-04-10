@@ -1,0 +1,6 @@
+#include "libDSP/DataCommon.h"
+#include "libDSP/TimeData.h"
+#include "libDSP/FreqData.h"
+#include "libDSP/SpecData.h"
+#include "libDSP/DiscData.h"
+#include "libDSP/EventData.h"
