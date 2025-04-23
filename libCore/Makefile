@@ -28,19 +28,19 @@ $(LIB_INCL_DIR)/LockObj.h: LockObj.h DSPCommon.h
 
 # Object Building
 $(LIB_OBJ_DIR)/DSPCommon.o: DSPCommon.cpp DSPCommon.h 
-	g++ $(G++_OPTS) -c -o $@ $<
+	${CC} $(G++_OPTS) -c -o $@ $<
 
 $(LIB_OBJ_DIR)/TimeObj.o: TimeObj.cpp TimeObj.h DSPCommon.h 
-	g++ $(G++_OPTS) -c -o $@ $<
+	$(CC) $(G++_OPTS) -c -o $@ $<
 	
 $(LIB_OBJ_DIR)/LogObj.o: LogObj.cpp LogObj.h DSPCommon.h 
-	g++ $(G++_OPTS) -c -o $@ $<
+	${CC} $(G++_OPTS) -c -o $@ $<
 	
 $(LIB_OBJ_DIR)/LockObj.o: LockObj.cpp LockObj.h DSPCommon.h 
-	g++ $(G++_OPTS) -c -o $@ $<
+	${CC} $(G++_OPTS) -c -o $@ $<
 	
 $(REGRESS): $(REGRESS).cpp $(SRC_FILES) $(INCLUDE_FILES)
-	g++ $(G++_OPTS) -I$(ARTEMIS_INCLS) -L$(ARTEMIS_ROOT)/lib -o $@ $< -lCore
+	${CC} $(G++_OPTS) -I$(ARTEMIS_INCLS) -L$(ARTEMIS_ROOT)/lib -o $@ $< -lCore
 
 
 .PHONY: check

@@ -38,25 +38,25 @@ $(LIB_INCL_DIR)/EventData.h: EventData.h DataCommon.h
 
 # Objects
 $(LIB_OBJ_DIR)/DataCommon.o: DataCommon.cpp DataCommon.h
-	cc $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
+	${CC} $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
 
 $(LIB_OBJ_DIR)/TimeData.o: TimeData.cpp TimeData.h DataCommon.h
-	cc $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
+	${CC} $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
 
 $(LIB_OBJ_DIR)/FreqData.o: FreqData.cpp FreqData.h DataCommon.h
-	cc $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
+	${CC} $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
 
 $(LIB_OBJ_DIR)/SpecData.o: SpecData.cpp SpecData.h DataCommon.h
-	cc $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
+	${CC} $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
 
 # DiscreteData.o: DiscreteData.cpp DiscreteData.h DataCommon.h
-# 	cc $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
+# 	${CC} $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
 
 $(LIB_OBJ_DIR)/EventData.o: EventData.cpp EventData.h DataCommon.h
-	cc $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
+	${CC} $(G++_OPTS) -I$(ROOT_INCL_DIR) -c -o $@ $<
 
 $(REGRESS): $(REGRESS).cpp $(SRC_FILES) $(INCLUDE_FILES)
-	g++ $(G++_OPTS) -I$(LIB_INCLS) -L$(ARTEMIS_ROOT)/lib -o $@ $< -lCore -lDSP -lSVG
+	${CC} $(G++_OPTS) -I$(LIB_INCLS) -L$(ARTEMIS_ROOT)/lib -o $@ $< -lCore -lDSP -lSVG
 
 
 .PHONY: check
